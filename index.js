@@ -1,23 +1,23 @@
 function appendToDisplay(value) {
     let display = document.getElementById("display");
     if (display.value === "" && (value === "+" || value === "-" || value === "*" || value === "/")) {
-        return; // Prevent starting with an operator
+        return; 
     }
     let lastChar = display.value.slice(-1);
     if (["+", "-", "", "/"].includes(lastChar) && ["+", "-", "", "/"].includes(value)) {
-        return; // Prevent consecutive operators
+        return; 
     }
     display.value += value;
 }
 
 function calculateResult() {
     let display = document.getElementById("display");
-    if (display.value === "") return; // Prevent empty calculation
+    if (display.value === "") return; 
 
     try {
-        display.value = eval(display.value); // Evaluates the expression
+        display.value = eval(display.value);
     } catch (error) {
-        display.value = "Error"; // Handles invalid expressions
+        display.value = "Error"; 
     }
 }
 
